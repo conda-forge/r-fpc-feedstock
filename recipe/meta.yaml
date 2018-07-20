@@ -1,4 +1,4 @@
-{% set version = '2.1-10' %}
+{% set version = "2.1-11.1" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,7 +12,7 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/fpc_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/fpc/fpc_{{ version }}.tar.gz
-  sha256: 5d17c5f475c3f24a4809678cbc6186a357276240cf7fcb00d5670b9e68baa096
+  sha256: ccfe4c5acb8b7c313b7c07076b994900b09f1d13459a0ca7815de337e12931ab
 
 build:
   number: 0
