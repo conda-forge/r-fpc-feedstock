@@ -1,5 +1,4 @@
-{% set version = "2.1-11.1" %}
-
+{% set version = '2.1-11.1' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,19 +9,22 @@ package:
 source:
   fn: fpc_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/fpc_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/fpc/fpc_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/fpc_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/fpc/fpc_{{ version }}.tar.gz
   sha256: ccfe4c5acb8b7c313b7c07076b994900b09f1d13459a0ca7815de337e12931ab
 
 build:
-  number: 0
+  merge_build_host: True  # [win]
+  number: 1
   skip: true  # [win32]
-
   rpaths:
     - lib/R/lib/
     - lib/
+
 requirements:
   build:
+    - {{posix}}zip               # [win]
+  host:
     - r-base
     - r-mass
     - r-class
@@ -35,7 +37,6 @@ requirements:
     - r-prabclus
     - r-robustbase
     - r-trimcluster
-
   run:
     - r-base
     - r-mass
@@ -52,7 +53,7 @@ requirements:
 
 test:
   commands:
-    - $R -e "library('fpc')"  # [not win]
+    - $R -e "library('fpc')"           # [not win]
     - "\"%R%\" -e \"library('fpc')\""  # [win]
 
 about:
@@ -69,7 +70,6 @@ about:
     DBSCAN clustering. Interface functions for many  clustering methods implemented
     in R, including estimating the number of clusters with kmeans, pam and clara. Modality
     diagnosis for Gaussian mixtures. For an overview see package?fpc.'
-
   license_family: GPL
 
 extra:
@@ -78,3 +78,5 @@ extra:
     - bgruening
     - daler
     - jdblischak
+    - cbrueffer
+    - dbast
