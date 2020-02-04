@@ -1,4 +1,4 @@
-{% set version = "2.2-4" %}
+{% set version = "2.2-5" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/fpc_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/fpc/fpc_{{ version }}.tar.gz
-  sha256: ce9bfb0e93f4e98919523d1f1ce3cfd5c83e10e6c6ebdcb85806bdb674a156bf
+  sha256: 45855d446593b93ea0873d701a6c7c6b47335a67ab34066e4cc8ae1d3f24a080
 
 build:
   merge_build_host: True  # [win]
