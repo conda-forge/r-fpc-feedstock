@@ -53,7 +53,7 @@ test:
 
 about:
   home: https://www.unibo.it/sitoweb/christian.hennig/en/
-  license: GPL
+  license: GPL-2.0-or-later
   summary: 'Various methods for clustering and cluster validation. Fixed point clustering. Linear
     regression clustering. Clustering by  merging Gaussian mixture components. Symmetric  and
     asymmetric discriminant projections for visualisation of the  separation of groupings.
