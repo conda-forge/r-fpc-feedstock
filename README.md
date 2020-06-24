@@ -3,7 +3,7 @@ About r-fpc
 
 Home: https://www.unibo.it/sitoweb/christian.hennig/en/
 
-Package license: GPL
+Package license: GPL-2.0-or-later
 
 Feedstock license: BSD 3-Clause
 
