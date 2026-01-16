@@ -1,4 +1,4 @@
-{% set version = "2.2-13" %}
+{% set version = "2.2-14" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/fpc_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/fpc/fpc_{{ version }}.tar.gz
-  sha256: 4f543df847bc0fee60b97416484f00dbafb433d893ce8c019de787f302d53f47
+  sha256: 654e87f31ba98e56bd437a8325dcd52a54309c8f40eda6e0996423dc6d54320a
 
 build:
-  number: 1
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
